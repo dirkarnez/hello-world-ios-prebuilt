@@ -24,7 +24,7 @@ jobs:
       - run: |
           cd "Hello-World-iOS" && \
           xcodebuild -list -project "Hello World.xcodeproj" && \
-          xcodebuild archive -scheme "Hello World" SWIFT_VERSION=6 -sdk iphoneos -archivePath hello_world.xcarchive && \
+          xcodebuild archive -scheme "Hello World" SWIFT_VERSION=5 -sdk iphoneos -archivePath hello_world.xcarchive && \
           xcodebuild -exportArchive -archivePath hello_world.xcarchive -exportOptionsPlist exportOptions.plist -exportPath hello_world.ipa
 
 
