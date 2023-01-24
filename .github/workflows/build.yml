@@ -23,14 +23,11 @@ jobs:
           
       - run: |
           cd "Hello-World-iOS" && \
-          xcodebuild -list -project "Hello World.xcodeproj"
-          
-#          && \
-#          xcodebuild archive -scheme <scheme-that-you-want-to-use> \
-#          -sdk iphoneos \
-#          -archivePath hello_world.xcarchive
-#          
-#          
+          xcodebuild -list -project "Hello World.xcodeproj" && \
+          xcodebuild archive -scheme "Hello World" -sdk iphoneos -archivePath hello_world.xcarchive && \
+          xcodebuild -exportArchive -archivePath hello_world.xcarchive -exportOptionsPlist exportOptions.plist -exportPath hello_world.ipa
+
+
 #          xcodebuild \
 #          -project Hello World.xcodeproj \
 #          -target hello_world_ios \
