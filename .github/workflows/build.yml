@@ -17,7 +17,7 @@ jobs:
       
       - uses: mxcl/xcodebuild@v1.11.0
         with:
-          working-directory: Hello-World-iOS/Hello World/
+          working-directory: Hello-World-iOS
           platform: iOS
           action: build
           configuration: release
