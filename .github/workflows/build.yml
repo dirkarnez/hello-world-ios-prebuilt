@@ -23,14 +23,22 @@ jobs:
           
       - run: |
           cd "Hello-World-iOS" && \
-          xcodebuild \
-          -project Hello World.xcodeproj \
-          -target hello_world_ios \
-          CODE_SIGN_IDENTITY="" \
-          CODE_SIGNING_REQUIRED=NO \
-          CODE_SIGNING_ALLOWED=NO \
-          -exportArchive -archivePath "Hello World.xcarchive" \
-          -exportPath "Hello World.ipa"
+          xcodebuild -list -project "Hello World.xcodeproj"
+          
+#          && \
+#          xcodebuild archive -scheme <scheme-that-you-want-to-use> \
+#          -sdk iphoneos \
+#          -archivePath hello_world.xcarchive
+#          
+#          
+#          xcodebuild \
+#          -project Hello World.xcodeproj \
+#          -target hello_world_ios \
+#          CODE_SIGN_IDENTITY="" \
+#          CODE_SIGNING_REQUIRED=NO \
+#          CODE_SIGNING_ALLOWED=NO \
+#          -exportArchive -archivePath "Hello World.xcarchive" \
+#          -exportPath "Hello World.ipa"
 
       - name: Archive Release
         uses: thedoctor0/zip-release@master
