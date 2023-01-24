@@ -23,11 +23,11 @@ jobs:
 #           apple-id: 'bot@sinoru.io' # Apple ID to download from Apple Developer when Xcode not available in local
 #           apple-id-password: ${{ secrets.APPLE_ID_PASSWORD }}
           
+#                     CODE_SIGN_IDENTITY="" \
       - run: |
           cd "Hello-World-iOS" && \
           xcodebuild -list -project "Hello World.xcodeproj" && \
           xcodebuild archive -scheme "Hello World" SWIFT_VERSION=5 -sdk iphoneos \
-          CODE_SIGN_IDENTITY="" \
           CODE_SIGNING_REQUIRED=NO \
           CODE_SIGNING_ALLOWED=NO \
           -archivePath hello_world.xcarchive && \
