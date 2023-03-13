@@ -34,15 +34,15 @@ jobs:
           xcodebuild -list -project "Hello World.xcodeproj" && \
           xcodebuild archive \
           -scheme "Hello World" \
-          -destination 'generic/platform=iOS'
+          -destination 'generic/platform=iOS' \
           SWIFT_VERSION=5 \
           -sdk iphoneos \
           CODE_SIGNING_REQUIRED=NO \
           CODE_SIGNING_ALLOWED=NO \
           CODE_SIGN_IDENTITY= \
-          CODE_SIGN_ENTITLEMENTS=
+          CODE_SIGN_ENTITLEMENTS= \
           GCC_OPTIMIZATION_LEVEL=s \
-          SWIFT_OPTIMIZATION_LEVEL=-O
+          SWIFT_OPTIMIZATION_LEVEL=-O \
           -archivePath hello_world.xcarchive
           
           # && \
