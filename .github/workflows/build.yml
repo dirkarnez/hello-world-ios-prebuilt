@@ -49,7 +49,7 @@ jobs:
           mkdir -p ./ipa/Payload && \
           cp -r "./Hello World.app"  ./ipa/Payload && \
           cd ipa && \
-          zip -r $pwd/${{ env.targetIPA }} *
+          zip -r "${{ env.targetIPA }}" *
           
           # && \
           # xcodebuild -exportArchive -archivePath hello_world.xcarchive -exportOptionsPlist ../ExportOptions.plist -exportPath hello_world.ipa
@@ -57,6 +57,6 @@ jobs:
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "Hello-World-iOS/${{ env.targetIPA }}"
+          artifacts: "Hello-World-iOS/hello_world.xcarchive/Products/Applications/ipa/${{ env.targetIPA }}"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
