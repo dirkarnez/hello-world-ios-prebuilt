@@ -17,7 +17,7 @@ jobs:
       
       - run: git clone https://github.com/cwalk/Hello-World-iOS
           
-      - uses: sinoru/actions-setup-xcode@v2
+      - uses: sinoru/actions-setup-xcode@v2.0.2
         with:
           xcode-version: '13.0' # Exact version of a Xcode version to use
           apple-id: 'smalldirkalex@gmail.com' # Apple ID to download from Apple Developer when Xcode not available in local
