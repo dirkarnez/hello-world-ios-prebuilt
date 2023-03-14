@@ -9,7 +9,7 @@ on:
 jobs:
   build:
     name: Create Release
-    runs-on: macos-11
+    runs-on: macos-latest
     env:
       targetIPA: Hello-World-iOS-${{ github.ref_name }}.zip
     steps:
@@ -17,9 +17,15 @@ jobs:
       
       - run: git clone https://github.com/cwalk/Hello-World-iOS
           
-      - uses: maxim-lobanov/setup-xcode@v1
+      - uses: sinoru/actions-setup-xcode@v2
         with:
-          xcode-version: '13.0.0'
+          xcode-version: '13.0' # Exact version of a Xcode version to use
+          apple-id: 'bot@sinoru.io' # Apple ID to download from Apple Developer when Xcode not available in local
+          apple-id-password: ${{ secrets.APPLE_ID_PASSWORD }}
+          
+#       - uses: maxim-lobanov/setup-xcode@v1
+#         with:
+#           xcode-version: '13.0.0'
           
       - name: Show Xcode version
         run: xcodebuild -version
