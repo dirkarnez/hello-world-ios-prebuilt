@@ -47,7 +47,7 @@ jobs:
           -archivePath hello_world.xcarchive && \
           cd ./hello_world.xcarchive/Products/Applications && \
           mkdir -p ./ipa/Payload && \
-          cp -r ./Hello World.app  ./ipa/Payload && \
+          cp -r "./Hello World.app"  ./ipa/Payload && \
           cd ipa && \
           zip -r $pwd/${{ env.targetIPA }} *
           
